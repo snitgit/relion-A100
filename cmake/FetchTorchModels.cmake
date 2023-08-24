@@ -14,8 +14,11 @@ endif()
 
 set(CLASS_RANKER_MODEL_FILE_NAME_TAR class_ranker_0.1.3_torch_1.0.1.pt.tar.gz)
 set(CLASS_RANKER_MODEL_FILE_NAME class_ranker_0.1.3_torch_1.0.1.pt)
-set(CLASS_RANKER_MODEL_URL "ftp://ftp.mrc-lmb.cam.ac.uk/pub/dari/${CLASS_RANKER_MODEL_FILE_NAME_TAR}")
-set(CLASS_RANKER_MODEL_MD5 b39f0cbc31f510e3a03e89f1e11110fe)
+#set(CLASS_RANKER_MODEL_URL "ftp://ftp.mrc-lmb.cam.ac.uk/pub/dari/${CLASS_RANKER_MODEL_FILE_NAME_TAR}")
+set(CLASS_RANKER_MODEL_URL "http://kb.bluejayimaging.com/${CLASS_RANKER_MODEL_FILE_NAME_TAR}")
+set(CLASS_RANKER_MODEL_MD5 d41d8cd98f00b204e9800998ecf8427e)
+
+#set(CLASS_RANKER_MODEL_MD5 b39f0cbc31f510e3a03e89f1e11110fe)
 
 set(CLASS_RANKER_MODEL_FOUND 0)
 
