@@ -8,18 +8,28 @@ set(INC_PATHFFT $ENV{FFTW_INCLUDE})
 unset(FFTW_PATH CACHE)
 unset(FFTW_INCLUDES CACHE)
 unset(FFTW_LIBRARIES CACHE)
-	   
 
+# add by Snit
+set(FFTW_INCLUDES /usr/local/cuda/include)
+set(FFTW_LIBRARIES /usr/local/cuda/lib64)
+	   
+# Modify by Snit
 if(DEFINED ENV{FFTW_INCLUDE})
-    find_path(FFTW_PATH     NAMES fftw3.h PATHS ${INC_PATHFFT} )
-    find_path(FFTW_INCLUDES NAMES fftw3.h PATHS ${INC_PATHFFT} )
+   # find_path(FFTW_PATH     NAMES fftw3.h PATHS ${INC_PATHFFT} )
+   # find_path(FFTW_INCLUDES NAMES fftw3.h PATHS ${INC_PATHFFT} )
+   find_path(FFTW_PATH     NAMES cufftw.h PATHS ${INC_PATHFFT} )
+   find_path(FFTW_INCLUDES NAMES cufftw.h PATHS ${INC_PATHFFT} )
 else()
     find_path(FFTW_PATH     NAMES fftw3.h )
     find_path(FFTW_INCLUDES NAMES fftw3.h )
 endif()
 
-find_library(_FFTW_SINGLE  NAMES fftw3f  PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
-find_library(_FFTW_DOUBLE  NAMES fftw3   PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+# find_library(_FFTW_SINGLE  NAMES fftw3f  PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+# find_library(_FFTW_DOUBLE  NAMES fftw3   PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+
+find_library(_FFTW_SINGLE  NAMES libcufftw PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+find_library(_FFTW_DOUBLE  NAMES libcufftw PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+
 
 if (FFTW_PATH AND FFTW_INCLUDES AND 
    (_FFTW_SINGLE OR NOT FFTW_FIND_REQUIRED_SINGLE) AND 
