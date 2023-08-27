@@ -6,6 +6,11 @@
 set(FFTW_INCLUDES /usr/local/cuda/include)
 set(FFTW_LIBRARIES /usr/local/cuda/lib64)
 
+# add by Snit
+set(FFTW_LIB /usr/local/cuda/lib64)
+set(FFTW_INCLUDE /usr/local/cuda/include)
+
+
 set(LIB_PATHFFT $ENV{FFTW_LIB})
 set(INC_PATHFFT $ENV{FFTW_INCLUDE})
 
