@@ -2,6 +2,10 @@
 # for compilation of RELION binaries.
 #
 
+# add by Snit
+set(FFTW_INCLUDES /usr/local/cuda/include)
+set(FFTW_LIBRARIES /usr/local/cuda/lib64)
+
 set(LIB_PATHFFT $ENV{FFTW_LIB})
 set(INC_PATHFFT $ENV{FFTW_INCLUDE})
 
@@ -9,10 +13,7 @@ unset(FFTW_PATH CACHE)
 unset(FFTW_INCLUDES CACHE)
 unset(FFTW_LIBRARIES CACHE)
 
-# add by Snit
-set(FFTW_INCLUDES /usr/local/cuda/include)
-set(FFTW_LIBRARIES /usr/local/cuda/lib64)
-	   
+  
 # Modify by Snit
 if(DEFINED ENV{FFTW_INCLUDE})
    # find_path(FFTW_PATH     NAMES fftw3.h PATHS ${INC_PATHFFT} )
@@ -24,6 +25,7 @@ else()
     find_path(FFTW_INCLUDES NAMES fftw3.h )
 endif()
 
+# Modify by Snit
 # find_library(_FFTW_SINGLE  NAMES fftw3f  PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
 # find_library(_FFTW_DOUBLE  NAMES fftw3   PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
 
