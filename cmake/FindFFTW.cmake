@@ -68,6 +68,11 @@ else()
 	
 	if(NOT _FFTW_DOUBLE AND FFTW_FIND_REQUIRED_SINGLE)
 		message(STATUS "Single-precision FFTW was required but NOT found")
+  # add Snit
+  		message(STATUS "Show FFTW path")
+		message(STATUS "FFTW_PATH: ${FFTW_PATH}")
+		message(STATUS "FFTW_INCLUDES: ${FFTW_INCLUDES}")
+		message(STATUS "FFTW_LIBRARIES: ${FFTW_LIBRARIES}")
 	endif()
 	if(NOT _FFTW_SINGLE AND FFTW_FIND_REQUIRED_DOUBLE)
 		message(STATUS "Double-precision FFTW was required but NOT found")
