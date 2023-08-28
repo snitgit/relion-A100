@@ -20,7 +20,7 @@ The more comprehensive documentation of RELION is stored [here](https://relion.r
 + CCP4.8.0
 + PyMOL
 
-  Please keep it mind, it is __underconstruction!__, verification
+  Please keep it mind, it is __under construction!__, verification
   
 ## Installation
 
