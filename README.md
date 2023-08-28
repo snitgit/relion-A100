@@ -19,7 +19,9 @@ The more comprehensive documentation of RELION is stored [here](https://relion.r
 + Chimera
 + CCP4.8.0
 + PyMOL
-  __underconstruction!__
+
+  Please keep it mind, it is __underconstruction!__, verification
+  
 ## Installation
 
 More extensive options and configurations are available [here](https://relion.readthedocs.io/en/release-4.0/Installation.html),
