@@ -10,7 +10,16 @@ The underlying theory of MAP refinement is given in a [scientific publication](h
 If RELION is useful in your work, please cite this paper.
 
 The more comprehensive documentation of RELION is stored [here](https://relion.readthedocs.io/en/release-4.0/).
-
+## Upgraded from original installation
+- Apply CUDA FFTW for __The Fastest Fourier Transform in the West__ hope to speedup
+- External tool for Relion framework on Singularity image
++ MOTIONCOR2
++ CTFFIND4
++ ResMap
++ Chimera
++ CCP4.8.0
++ PyMOL
+  __underconstruction!__
 ## Installation
 
 More extensive options and configurations are available [here](https://relion.readthedocs.io/en/release-4.0/Installation.html),
