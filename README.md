@@ -11,7 +11,7 @@ If RELION is useful in your work, please cite this paper.
 
 The more comprehensive documentation of RELION is stored [here](https://relion.readthedocs.io/en/release-4.0/).
 ## Upgraded from original installation
-- Apply CUDA FFTW for __The Fastest Fourier Transform in the West__ hope to speedup
+- Undo(Apply CUDA FFTW for __The Fastest Fourier Transform in the West__ hope to speedup)
 - External tool for Relion framework on Singularity image
 + MOTIONCOR2
 + CTFFIND4
