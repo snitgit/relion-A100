@@ -2,14 +2,14 @@
 # for compilation of RELION binaries.
 #
 
-# add by Snit
-set(FFTW_PATH /usr/local/cuda)
-set(FFTW_INCLUDES /usr/local/cuda/include)
-set(FFTW_LIBRARIES /usr/local/cuda/lib64)
+# Undo add by Snit
+#set(FFTW_PATH /usr/local/cuda)
+#set(FFTW_INCLUDES /usr/local/cuda/include)
+#set(FFTW_LIBRARIES /usr/local/cuda/lib64)
 
-# add by Snit
-set(FFTW_LIB /usr/local/cuda/lib64)
-set(FFTW_INCLUDE /usr/local/cuda/include)
+# Undo add by Snit
+#set(FFTW_LIB /usr/local/cuda/lib64)
+#set(FFTW_INCLUDE /usr/local/cuda/include)
 
 
 set(LIB_PATHFFT $ENV{FFTW_LIB})
@@ -22,21 +22,21 @@ unset(FFTW_LIBRARIES CACHE)
   
 # Modify by Snit
 if(DEFINED ENV{FFTW_INCLUDE})
-   # find_path(FFTW_PATH     NAMES fftw3.h PATHS ${INC_PATHFFT} )
-   # find_path(FFTW_INCLUDES NAMES fftw3.h PATHS ${INC_PATHFFT} )
-   find_path(FFTW_PATH     NAMES cufftw.h PATHS ${INC_PATHFFT} )
-   find_path(FFTW_INCLUDES NAMES cufftw.h PATHS ${INC_PATHFFT} )
+    find_path(FFTW_PATH     NAMES fftw3.h PATHS ${INC_PATHFFT} )
+    find_path(FFTW_INCLUDES NAMES fftw3.h PATHS ${INC_PATHFFT} )
+  # find_path(FFTW_PATH     NAMES cufftw.h PATHS ${INC_PATHFFT} )
+  # find_path(FFTW_INCLUDES NAMES cufftw.h PATHS ${INC_PATHFFT} )
 else()
     find_path(FFTW_PATH     NAMES fftw3.h )
     find_path(FFTW_INCLUDES NAMES fftw3.h )
 endif()
 
-# Modify by Snit
-# find_library(_FFTW_SINGLE  NAMES fftw3f  PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
-# find_library(_FFTW_DOUBLE  NAMES fftw3   PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+# Undo Modify by Snit
+ find_library(_FFTW_SINGLE  NAMES fftw3f  PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+ find_library(_FFTW_DOUBLE  NAMES fftw3   PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
 
-find_library(_FFTW_SINGLE  NAMES libcufftw.so PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
-find_library(_FFTW_DOUBLE  NAMES libcufftw.so PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+#find_library(_FFTW_SINGLE  NAMES libcufftw.so PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
+#find_library(_FFTW_DOUBLE  NAMES libcufftw.so PATHS ${LIB_PATHFFT} $ENV{FFTW_LIB} $ENV{FFTW_HOME} )
 
 
 if (FFTW_PATH AND FFTW_INCLUDES AND 
